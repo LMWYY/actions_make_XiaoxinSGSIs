@@ -128,10 +128,9 @@ jobs:
              fi
              ls "upload"
              
-       - name: Upload SGSI to action-gh-release...
-         uses: ncipollo/release-action@v1.8.6
-         with:
-           artifacts: upload/*
-           name: xiaoxinSGSI-ab-Android10-unpack
-           tag: xiaoxinSGSI-ab-Android10-${{ github.run_number }}
-           token: ${{ secrets.GITHUB_TOKEN }}
+       - name: Upload to Artifact
+         uses: actions/upload-artifact@v3 
+         with: 
+          name: "xiaoxinSGSI-ab-Android10-unpack"
+          path: |
+            upload/*
